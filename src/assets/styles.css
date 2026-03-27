@@ -375,6 +375,14 @@
   }
   .project-link:hover { color: var(--accent); }
   .project-link svg { flex-shrink: 0; }
+  .project-link.is-disabled {
+    opacity: 0.7;
+    cursor: default;
+  }
+  .project-link.is-disabled:hover {
+    color: var(--accent);
+    opacity: 1;
+  }
 
   /* ── EXPERIENCE ── */
   .exp-list {
