@@ -12,9 +12,9 @@
     "name": "Hernan Mendes",
     "links": [
       { "label": "Ver proyectos →", "href": "#projects", "style": "primary" },
-      { "label": "LinkedIn", "href": "https://www.linkedin.com/in/hmendesgouveia", "style": "ghost" },
-      { "label": "Contacto", "href": "#contact", "style": "ghost" },
-      { "label": "GitHub", "href": "https://github.com/HernanMendes", "style": "ghost", "icon": "github" }
+      { "label": "LinkedIn", "href": "https://www.linkedin.com/in/hmendesgouveia", "style": "ghost", "icon": "linkedin" },
+      { "label": "GitHub", "href": "https://github.com/HernanMendes", "style": "ghost", "icon": "github" },
+      { "label": "Contacto", "href": "#contact", "style": "ghost", "icon": "email" }
     ]
   },
   "about": {
