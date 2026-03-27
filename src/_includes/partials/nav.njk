@@ -1,8 +1,13 @@
 <nav>
   <div class="nav-logo">~/hernan-mendes</div>
-  <ul>
-    {% for item in site.nav %}
-    <li><a href="{{ item.href }}">{{ item.label }}</a></li>
-    {% endfor %}
-  </ul>
+  <div class="nav-actions">
+    <ul>
+      {% for item in site.nav %}
+      <li><a href="{{ item.href }}">{{ item.label }}</a></li>
+      {% endfor %}
+    </ul>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">
+      Modo claro
+    </button>
+  </div>
 </nav>
