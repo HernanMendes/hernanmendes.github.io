@@ -6,8 +6,11 @@
       <li><a href="{{ item.href }}">{{ item.label }}</a></li>
       {% endfor %}
     </ul>
-    <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">
-      Modo claro
+    <a class="lang-toggle" href="{% if lang == 'en' %}/{% else %}/en/{% endif %}" aria-label="{{ site.ui.langSwitchAria }}">
+      {{ site.ui.langSwitch }}
+    </a>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" data-theme-label-light="{{ site.ui.themeToggleLight }}" data-theme-label-dark="{{ site.ui.themeToggleDark }}">
+      {{ site.ui.themeToggleLight }}
     </button>
   </div>
 </nav>

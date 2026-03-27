@@ -1,0 +1,169 @@
+{
+  "title": "Hernan Mendes — Python Developer",
+  "nav": [
+    { "label": "about", "href": "#about" },
+    { "label": "skills", "href": "#skills" },
+    { "label": "projects", "href": "#projects" },
+    { "label": "experience", "href": "#experience" },
+    { "label": "contact", "href": "#contact" }
+  ],
+  "ui": {
+    "greeting": "Hi, I'm",
+    "themeToggleLight": "Light mode",
+    "themeToggleDark": "Dark mode",
+    "langSwitch": "Español",
+    "langSwitchAria": "Switch to Spanish",
+    "projectRepo": "repo",
+    "projectLive": "live",
+    "contactCta": "Send email →"
+  },
+  "sections": {
+    "about": { "label": "01 / about", "title": "A bit about me" },
+    "skills": { "label": "02 / skills", "title": "Tech stack" },
+    "projects": { "label": "03 / projects", "title": "Featured projects" },
+    "experience": { "label": "04 / experience", "title": "Experience" },
+    "contact": { "label": "05 / contact", "title": "Let's talk" }
+  },
+  "hero": {
+    "tag": "// Python Developer · Data Science",
+    "name": "Hernan Mendes",
+    "links": [
+      { "label": "View projects →", "href": "#projects", "style": "primary" },
+      { "label": "LinkedIn", "href": "https://www.linkedin.com/in/hmendesgouveia", "style": "ghost", "icon": "linkedin" },
+      { "label": "GitHub", "href": "https://github.com/HernanMendes", "style": "ghost", "icon": "github" },
+      { "label": "Contact", "href": "#contact", "style": "ghost", "icon": "email" }
+    ]
+  },
+  "about": {
+    "details": [
+      { "key": "location", "value": "Buenos Aires, AR" },
+      { "key": "experience", "value": "3+ years in Python" },
+      { "key": "focus", "value": "Scraping / Data Pipelines" },
+      { "key": "education", "value": "B.Sc. in Data Science (UNSAM)" },
+      { "key": "languages", "value": "Spanish, English (B2)" },
+      { "key": "status", "value": "● available", "accent": true }
+    ]
+  },
+  "skills": [
+    {
+      "category": "Backend & Scraping",
+      "tags": ["Python", "Django", "Scrapy", "Selenium", "Appium", "Celery"]
+    },
+    {
+      "category": "Data & Databases",
+      "tags": ["PostgreSQL", "MongoDB", "SQLAlchemy", "Redis", "Pandas"]
+    },
+    {
+      "category": "Cloud & Infra",
+      "tags": ["Google Cloud", "Docker", "Terraform", "Airflow", "Linux"]
+    },
+    {
+      "category": "Geospatial",
+      "tags": ["PostGIS", "GeoDjango", "Folium"]
+    },
+    {
+      "category": "APIs & Integrations",
+      "tags": ["Twitter API", "REST", "Webhooks"]
+    },
+    {
+      "category": "Practices",
+      "tags": ["ETL/ELT", "Data Quality", "Automation", "Documentation"]
+    }
+  ],
+  "projects": [
+    {
+      "number": "01",
+      "name": "Multi-source scraping for retail and delivery",
+      "description": "Extraction platform inside a Django stack orchestrating tasks with Celery and Redis. Includes web and mobile scraping, handling dynamic sites, and persistence in PostgreSQL.",
+      "tech": ["Django", "Celery", "Redis", "Selenium", "PostgreSQL"],
+      "repo": "",
+      "live": ""
+    },
+    {
+      "number": "02",
+      "name": "Media content pipeline",
+      "description": "Ingesting data from movie and series sites, enriched with user opinions via Twitter API. Cleaning and preliminary analysis with Pandas and storage in MongoDB for internal use.",
+      "tech": ["Python", "Scrapy", "Twitter API", "Pandas", "MongoDB"],
+      "repo": "",
+      "live": ""
+    },
+    {
+      "number": "03",
+      "name": "Railway interlocking simulator",
+      "description": "Development of a Python GUI to diagram and simulate interlocking systems. Modeling and documentation of digital circuits in VHDL for the EDU-CIAA-FPGA platform.",
+      "tech": ["Python", "GUI", "VHDL", "FPGA"],
+      "repo": "",
+      "live": ""
+    }
+  ],
+  "experience": [
+    {
+      "date": "Aug 2022 — Present",
+      "role": "Python Developer",
+      "company": "Gregario · Remote (Chile)",
+      "description": "Development and maintenance of scrapers in a Django project. Orchestration with Celery and Redis, web and mobile scraping with Selenium/Appium, and storage in PostgreSQL. Integration of flows into Airflow and support for geospatial cases with PostGIS/GeoDjango and Folium."
+    },
+    {
+      "date": "Mar 2022 — Aug 2022",
+      "role": "Data Engineer",
+      "company": "BB Media · Buenos Aires",
+      "description": "Built web scraping solutions for movie and series sites. Collected opinions via Twitter API, did preliminary analysis in Pandas, and stored data in MongoDB."
+    },
+    {
+      "date": "Oct 2020 — Mar 2022",
+      "role": "RF & Telecommunications Lab Technician",
+      "company": "TERALAB SRL · Ituzaingó",
+      "description": "RF testing for ENACOM certifications, technical report writing, and HERTZ system management. Coordinated with technical and commercial clients."
+    },
+    {
+      "date": "Mar 2020 — Mar 2022",
+      "role": "Teaching Assistant — Computer Science I",
+      "company": "UTN FR Haedo",
+      "description": "C theory and practical classes, lesson planning, grading, and office hours."
+    },
+    {
+      "date": "Sep 2018 — Feb 2021",
+      "role": "Intern — R&D Embedded Systems",
+      "company": "UTN FR Haedo",
+      "description": "Built a Python GUI for railway interlocking simulation and designed digital circuits in VHDL for the EDU-CIAA-FPGA."
+    },
+    {
+      "date": "Mar 2019 — Oct 2020",
+      "role": "Electronics Lab Technician",
+      "company": "Cremonesi Hnos. · Ciudadela",
+      "description": "Repair and installation of electronic equipment for automation, maintenance of electrical machines, and component inventory."
+    },
+    {
+      "date": "Aug 2017 — Jan 2018",
+      "role": "Intern — Technical Support",
+      "company": "Argomys S.A. · Villa Sarmiento",
+      "description": "Installation, configuration, and repair of electronic security equipment."
+    }
+  ],
+  "contact": {
+    "links": [
+      {
+        "type": "github",
+        "name": "GitHub",
+        "handle": "@HernanMendes",
+        "href": "https://github.com/HernanMendes"
+      },
+      {
+        "type": "linkedin",
+        "name": "LinkedIn",
+        "handle": "hmendesgouveia",
+        "href": "https://www.linkedin.com/in/hmendesgouveia"
+      },
+      {
+        "type": "email",
+        "name": "Email",
+        "handle": "hmendesgouveia@gmail.com",
+        "href": "mailto:hmendesgouveia@gmail.com"
+      }
+    ]
+  },
+  "footer": {
+    "text": "Built with ♥ — Hernan Mendes © 2025",
+    "location": "Buenos Aires, Argentina"
+  }
+}

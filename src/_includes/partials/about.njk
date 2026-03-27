@@ -1,9 +1,13 @@
 <section id="about">
-  <p class="sec-label reveal">01 / about</p>
-  <h2 class="sec-title reveal">Un poco sobre mí</h2>
+  <p class="sec-label reveal">{{ site.sections.about.label }}</p>
+  <h2 class="sec-title reveal">{{ site.sections.about.title }}</h2>
   <div class="about-grid">
     <div class="about-text reveal">
+      {% if lang == "en" %}
+      {% renderTemplate "md" %}{% include "../../sections/about.en.md" %}{% endrenderTemplate %}
+      {% else %}
       {% renderTemplate "md" %}{% include "../../sections/about.md" %}{% endrenderTemplate %}
+      {% endif %}
     </div>
     <div class="about-details reveal">
       {% for row in site.about.details %}

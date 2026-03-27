@@ -1,10 +1,14 @@
 <section id="contact">
-  <p class="sec-label reveal">05 / contact</p>
-  <h2 class="sec-title reveal">Hablemos</h2>
+  <p class="sec-label reveal">{{ site.sections.contact.label }}</p>
+  <h2 class="sec-title reveal">{{ site.sections.contact.title }}</h2>
   <div class="contact-inner">
     <div class="contact-text reveal">
+      {% if lang == "en" %}
+      {% renderTemplate "md" %}{% include "../../sections/contact.en.md" %}{% endrenderTemplate %}
+      {% else %}
       {% renderTemplate "md" %}{% include "../../sections/contact.md" %}{% endrenderTemplate %}
-      <a href="mailto:hmendesgouveia@gmail.com" class="btn btn-primary">Enviar email →</a>
+      {% endif %}
+      <a href="mailto:hmendesgouveia@gmail.com" class="btn btn-primary">{{ site.ui.contactCta }}</a>
     </div>
     <div class="contact-links reveal">
       {% for link in site.contact.links %}

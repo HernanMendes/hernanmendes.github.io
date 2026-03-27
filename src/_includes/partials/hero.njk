@@ -1,11 +1,15 @@
 <section class="hero">
   <p class="hero-tag">{{ site.hero.tag }}</p>
   <h1>
-    Hola, soy<br>
+    {{ site.ui.greeting }}<br>
     <em>{{ site.hero.name }}</em>
   </h1>
   <div class="hero-subtitle">
+    {% if lang == "en" %}
+    {% renderTemplate "md" %}{% include "../../sections/hero.en.md" %}{% endrenderTemplate %}
+    {% else %}
     {% renderTemplate "md" %}{% include "../../sections/hero.md" %}{% endrenderTemplate %}
+    {% endif %}
   </div>
   <div class="hero-links">
     {% for link in site.hero.links %}

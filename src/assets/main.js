@@ -24,7 +24,9 @@
     if (themeToggle) {
       const isLight = theme === 'light';
       themeToggle.setAttribute('aria-pressed', String(isLight));
-      themeToggle.textContent = isLight ? 'Modo oscuro' : 'Modo claro';
+      const lightLabel = themeToggle.dataset.themeLabelLight || 'Modo claro';
+      const darkLabel = themeToggle.dataset.themeLabelDark || 'Modo oscuro';
+      themeToggle.textContent = isLight ? darkLabel : lightLabel;
     }
   };
 

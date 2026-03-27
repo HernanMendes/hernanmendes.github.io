@@ -1,14 +1,31 @@
 {
-  "title": "Hernan Mendes — Python Developer",
+  "title": "Hernan Mendes — Desarrollador Python",
   "nav": [
     { "label": "sobre mí", "href": "#about" },
-    { "label": "skills", "href": "#skills" },
+    { "label": "habilidades", "href": "#skills" },
     { "label": "proyectos", "href": "#projects" },
     { "label": "experiencia", "href": "#experience" },
     { "label": "contacto", "href": "#contact" }
   ],
+  "ui": {
+    "greeting": "Hola, soy",
+    "themeToggleLight": "Modo claro",
+    "themeToggleDark": "Modo oscuro",
+    "langSwitch": "English",
+    "langSwitchAria": "Cambiar a inglés",
+    "projectRepo": "repo",
+    "projectLive": "demo",
+    "contactCta": "Enviar email →"
+  },
+  "sections": {
+    "about": { "label": "01 / sobre mí", "title": "Un poco sobre mí" },
+    "skills": { "label": "02 / habilidades", "title": "Stack tecnológico" },
+    "projects": { "label": "03 / proyectos", "title": "Proyectos destacados" },
+    "experience": { "label": "04 / experiencia", "title": "Experiencia" },
+    "contact": { "label": "05 / contacto", "title": "Hablemos" }
+  },
   "hero": {
-    "tag": "// Python Developer · Data Science",
+    "tag": "// Desarrollador Python · Ciencia de Datos",
     "name": "Hernan Mendes",
     "links": [
       { "label": "Ver proyectos →", "href": "#projects", "style": "primary" },
@@ -19,12 +36,12 @@
   },
   "about": {
     "details": [
-      { "key": "location", "value": "Buenos Aires, AR" },
-      { "key": "experience", "value": "3+ años en Python" },
-      { "key": "focus", "value": "Scraping / Data Pipelines" },
-      { "key": "education", "value": "Lic. en Ciencia de Datos (UNSAM)" },
-      { "key": "languages", "value": "Español, Inglés (B2)" },
-      { "key": "status", "value": "● disponible", "accent": true }
+      { "key": "ubicación", "value": "Buenos Aires, AR" },
+      { "key": "experiencia", "value": "3+ años en Python" },
+      { "key": "foco", "value": "Scraping / Data Pipelines" },
+      { "key": "educación", "value": "Lic. en Ciencia de Datos (UNSAM)" },
+      { "key": "idiomas", "value": "Español, Inglés (B2)" },
+      { "key": "estado", "value": "● disponible", "accent": true }
     ]
   },
   "skills": [
@@ -33,15 +50,15 @@
       "tags": ["Python", "Django", "Scrapy", "Selenium", "Appium", "Celery"]
     },
     {
-      "category": "Data & Databases",
+      "category": "Datos & Bases de datos",
       "tags": ["PostgreSQL", "MongoDB", "SQLAlchemy", "Redis", "Pandas"]
     },
     {
-      "category": "Cloud & Infra",
+      "category": "Cloud & Infraestructura",
       "tags": ["Google Cloud", "Docker", "Terraform", "Airflow", "Linux"]
     },
     {
-      "category": "Geospatial",
+      "category": "Geoespacial",
       "tags": ["PostGIS", "GeoDjango", "Folium"]
     },
     {
@@ -49,7 +66,7 @@
       "tags": ["Twitter API", "REST", "Webhooks"]
     },
     {
-      "category": "Practices",
+      "category": "Prácticas",
       "tags": ["ETL/ELT", "Data Quality", "Automatización", "Documentación"]
     }
   ],
@@ -146,7 +163,7 @@
     ]
   },
   "footer": {
-    "text": "Built with ♥ — Hernan Mendes © 2025",
+    "text": "Hecho con ♥ — Hernan Mendes © 2025",
     "location": "Buenos Aires, Argentina"
   }
 }
