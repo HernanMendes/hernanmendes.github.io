@@ -1,46 +1,17 @@
 <section id="about">
-<p class="sec-label reveal">01 / about</p>
-<h2 class="sec-title reveal">Un poco sobre mí</h2>
-<div class="about-grid">
-<div class="about-text reveal">
-<p>
-        Soy desarrollador Python con foco en extracción y explotación de datos. He construido scrapers
-        a escala dentro de entornos Django, automatizando tareas con Celery y Redis, e integrando
-        fuentes web y móviles con Selenium y Appium.
-      </p>
-<p>
-        Me interesa el análisis de datos, Big Data y Machine Learning. Busco aportar soluciones
-        confiables, trazables y fáciles de operar para equipos de producto y analítica.
-      </p>
-<p>
-        Actualmente <strong>abierto a oportunidades</strong> en data engineering, scraping y automatización - ya sean proyectos freelance o posiciones full-time. Si crees que puedo aportar a tu equipo o proyecto, no dudes en contactarme.
-      </p>
-</div>
-<div class="about-details reveal">
-<div class="detail-row">
-<span class="detail-key">location</span>
-<span class="detail-val">Buenos Aires, AR</span>
-</div>
-<div class="detail-row">
-<span class="detail-key">experience</span>
-<span class="detail-val">3+ años en Python</span>
-</div>
-<div class="detail-row">
-<span class="detail-key">focus</span>
-<span class="detail-val">Scraping / Data Pipelines</span>
-</div>
-<div class="detail-row">
-<span class="detail-key">education</span>
-<span class="detail-val">Lic. en Ciencia de Datos (UNSAM)</span>
-</div>
-<div class="detail-row">
-<span class="detail-key">languages</span>
-<span class="detail-val">Español, Inglés (B2)</span>
-</div>
-<div class="detail-row">
-<span class="detail-key">status</span>
-<span class="detail-val" style="color: var(--accent2);">● disponible</span>
-</div>
-</div>
-</div>
+  <p class="sec-label reveal">01 / about</p>
+  <h2 class="sec-title reveal">Un poco sobre mí</h2>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      {% renderTemplate "md" %}{% include "sections/about.md" %}{% endrenderTemplate %}
+    </div>
+    <div class="about-details reveal">
+      {% for row in site.about.details %}
+      <div class="detail-row">
+        <span class="detail-key">{{ row.key }}</span>
+        <span class="detail-val"{% if row.accent %} style="color: var(--accent2);"{% endif %}>{{ row.value }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
 </section>

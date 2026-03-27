@@ -1,56 +1,20 @@
 <section id="projects">
-<p class="sec-label reveal">03 / projects</p>
-<h2 class="sec-title reveal">Proyectos destacados</h2>
-<div class="projects-list reveal">
-<div class="project-item">
-<div>
-<p class="project-number">01</p>
-<p class="project-name">Scraping multifuente para retail y delivery</p>
-<p class="project-desc">
-          Plataforma de extracción dentro de un stack Django que orquesta tareas con Celery y Redis.
-          Incluye scraping web y móvil, manejo de sitios dinámicos y persistencia en PostgreSQL.
-        </p>
-<div class="project-tech">
-<span class="tech-badge">Django</span>
-<span class="tech-badge">Celery</span>
-<span class="tech-badge">Redis</span>
-<span class="tech-badge">Selenium</span>
-<span class="tech-badge">PostgreSQL</span>
-</div>
-</div>
-</div>
-<div class="project-item">
-<div>
-<p class="project-number">02</p>
-<p class="project-name">Pipeline de contenidos audiovisuales</p>
-<p class="project-desc">
-          Ingesta de datos de sitios de cine y series, enriquecida con opiniones de usuarios vía Twitter API.
-          Limpieza y análisis preliminar con Pandas y almacenamiento en MongoDB para consumo interno.
-        </p>
-<div class="project-tech">
-<span class="tech-badge">Python</span>
-<span class="tech-badge">Scrapy</span>
-<span class="tech-badge">Twitter API</span>
-<span class="tech-badge">Pandas</span>
-<span class="tech-badge">MongoDB</span>
-</div>
-</div>
-</div>
-<div class="project-item">
-<div>
-<p class="project-number">03</p>
-<p class="project-name">Simulador de enclavamiento ferroviario</p>
-<p class="project-desc">
-          Desarrollo de una interfaz gráfica en Python para esquematizar y simular sistemas de enclavamiento.
-          Modelado y documentación de circuitos digitales en VHDL para la plataforma EDU-CIAA-FPGA.
-        </p>
-<div class="project-tech">
-<span class="tech-badge">Python</span>
-<span class="tech-badge">GUI</span>
-<span class="tech-badge">VHDL</span>
-<span class="tech-badge">FPGA</span>
-</div>
-</div>
-</div>
-</div>
+  <p class="sec-label reveal">03 / projects</p>
+  <h2 class="sec-title reveal">Proyectos destacados</h2>
+  <div class="projects-list reveal">
+    {% for project in site.projects %}
+    <div class="project-item">
+      <div>
+        <p class="project-number">{{ project.number }}</p>
+        <p class="project-name">{{ project.name }}</p>
+        <p class="project-desc">{{ project.description }}</p>
+        <div class="project-tech">
+          {% for tech in project.tech %}
+          <span class="tech-badge">{{ tech }}</span>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
 </section>

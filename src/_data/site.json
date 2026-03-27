@@ -1,0 +1,158 @@
+{
+  "title": "Hernan Mendes — Python Developer",
+  "nav": [
+    { "label": "sobre mí", "href": "#about" },
+    { "label": "skills", "href": "#skills" },
+    { "label": "proyectos", "href": "#projects" },
+    { "label": "experiencia", "href": "#experience" },
+    { "label": "contacto", "href": "#contact" }
+  ],
+  "hero": {
+    "tag": "// Python Developer · Data Science",
+    "name": "Hernan Mendes",
+    "links": [
+      { "label": "Ver proyectos →", "href": "#projects", "style": "primary" },
+      { "label": "LinkedIn", "href": "https://www.linkedin.com/in/hmendesgouveia", "style": "ghost" },
+      { "label": "Contacto", "href": "#contact", "style": "ghost" },
+      { "label": "GitHub", "href": "https://github.com/HernanMendes", "style": "ghost", "icon": "github" }
+    ]
+  },
+  "about": {
+    "details": [
+      { "key": "location", "value": "Buenos Aires, AR" },
+      { "key": "experience", "value": "3+ años en Python" },
+      { "key": "focus", "value": "Scraping / Data Pipelines" },
+      { "key": "education", "value": "Lic. en Ciencia de Datos (UNSAM)" },
+      { "key": "languages", "value": "Español, Inglés (B2)" },
+      { "key": "status", "value": "● disponible", "accent": true }
+    ]
+  },
+  "skills": [
+    {
+      "category": "Backend & Scraping",
+      "tags": ["Python", "Django", "Scrapy", "Selenium", "Appium", "Celery"]
+    },
+    {
+      "category": "Data & Databases",
+      "tags": ["PostgreSQL", "MongoDB", "SQLAlchemy", "Redis", "Pandas"]
+    },
+    {
+      "category": "Cloud & Infra",
+      "tags": ["Google Cloud", "Docker", "Terraform", "Airflow", "Linux"]
+    },
+    {
+      "category": "Geospatial",
+      "tags": ["PostGIS", "GeoDjango", "Folium"]
+    },
+    {
+      "category": "APIs & Integraciones",
+      "tags": ["Twitter API", "REST", "Webhooks"]
+    },
+    {
+      "category": "Practices",
+      "tags": ["ETL/ELT", "Data Quality", "Automatización", "Documentación"]
+    }
+  ],
+  "projects": [
+    {
+      "number": "01",
+      "name": "Scraping multifuente para retail y delivery",
+      "description": "Plataforma de extracción dentro de un stack Django que orquesta tareas con Celery y Redis. Incluye scraping web y móvil, manejo de sitios dinámicos y persistencia en PostgreSQL.",
+      "tech": ["Django", "Celery", "Redis", "Selenium", "PostgreSQL"]
+    },
+    {
+      "number": "02",
+      "name": "Pipeline de contenidos audiovisuales",
+      "description": "Ingesta de datos de sitios de cine y series, enriquecida con opiniones de usuarios vía Twitter API. Limpieza y análisis preliminar con Pandas y almacenamiento en MongoDB para consumo interno.",
+      "tech": ["Python", "Scrapy", "Twitter API", "Pandas", "MongoDB"]
+    },
+    {
+      "number": "03",
+      "name": "Simulador de enclavamiento ferroviario",
+      "description": "Desarrollo de una interfaz gráfica en Python para esquematizar y simular sistemas de enclavamiento. Modelado y documentación de circuitos digitales en VHDL para la plataforma EDU-CIAA-FPGA.",
+      "tech": ["Python", "GUI", "VHDL", "FPGA"]
+    }
+  ],
+  "experience": [
+    {
+      "date": "Ago 2022 — Presente",
+      "role": "Python Developer",
+      "company": "Gregario · Remoto (Chile)",
+      "description": "Desarrollo y mantenimiento de scrapers en un proyecto Django. Orquestación con Celery y Redis, scraping web y móvil con Selenium/Appium, y almacenamiento en PostgreSQL. Integración de flujos hacia Airflow y soporte a casos geoespaciales con PostGIS/GeoDjango y Folium."
+    },
+    {
+      "date": "Mar 2022 — Ago 2022",
+      "role": "Data Engineer",
+      "company": "BB Media · Buenos Aires",
+      "description": "Desarrollo de soluciones de web scraping para sitios de cine y series. Recolección de opiniones con Twitter API, análisis preliminar en Pandas y persistencia en MongoDB."
+    },
+    {
+      "date": "Oct 2020 — Mar 2022",
+      "role": "RF & Telecommunications Lab Technician",
+      "company": "TERALAB SRL · Ituzaingó",
+      "description": "Ensayos RF para certificaciones ENACOM, redacción de informes técnicos y gestión del sistema HERTZ. Coordinación con clientes técnicos y comerciales."
+    },
+    {
+      "date": "Mar 2020 — Mar 2022",
+      "role": "Teaching Assistant — Computer Science I",
+      "company": "UTN FR Haedo",
+      "description": "Clases teórico-prácticas en C, planificación de lecciones, corrección de trabajos y consultas."
+    },
+    {
+      "date": "Sep 2018 — Feb 2021",
+      "role": "Intern — R&D Embedded Systems",
+      "company": "UTN FR Haedo",
+      "description": "Desarrollo de interfaz gráfica en Python para simulación de enclavamiento ferroviario y diseño de circuitos digitales en VHDL para EDU-CIAA-FPGA."
+    },
+    {
+      "date": "Mar 2019 — Oct 2020",
+      "role": "Electronics Lab Technician",
+      "company": "Cremonesi Hnos. · Ciudadela",
+      "description": "Reparación e instalación de equipos electrónicos para automatización, mantenimiento de máquinas eléctricas e inventario de componentes."
+    },
+    {
+      "date": "Ago 2017 — Ene 2018",
+      "role": "Intern — Technical Support",
+      "company": "Argomys S.A. · Villa Sarmiento",
+      "description": "Instalación, configuración y reparación de equipos de seguridad electrónica."
+    }
+  ],
+  "contact": {
+    "links": [
+      {
+        "type": "github",
+        "name": "GitHub",
+        "handle": "@HernanMendes",
+        "href": "https://github.com/HernanMendes"
+      },
+      {
+        "type": "linkedin",
+        "name": "LinkedIn",
+        "handle": "hmendesgouveia",
+        "href": "https://www.linkedin.com/in/hmendesgouveia"
+      },
+      {
+        "type": "gitlab",
+        "name": "GitLab",
+        "handle": "@HernanMendes",
+        "href": "https://gitlab.com/HernanMendes"
+      },
+      {
+        "type": "website",
+        "name": "Website",
+        "handle": "hernanmendes.github.io",
+        "href": "https://hernanmendes.github.io/"
+      },
+      {
+        "type": "email",
+        "name": "Email",
+        "handle": "hmendesgouveia@gmail.com",
+        "href": "mailto:hmendesgouveia@gmail.com"
+      }
+    ]
+  },
+  "footer": {
+    "text": "Built with ♥ — Hernan Mendes © 2025",
+    "location": "Buenos Aires, Argentina"
+  }
+}
