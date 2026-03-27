@@ -1,508 +1,877 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;0,800;1,400&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tu Nombre — Python Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e0e0f;
+    --bg2: #151517;
+    --bg3: #1c1c1f;
+    --border: rgba(255,255,255,0.07);
+    --border2: rgba(255,255,255,0.13);
+    --text: #e8e6e1;
+    --muted: #7a7875;
+    --accent: #a3e635;
+    --accent2: #4ade80;
+    --mono: 'DM Mono', monospace;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ── CURSOR ── */
+  .cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.1em;
+    background: var(--accent);
+    vertical-align: text-bottom;
+    margin-left: 2px;
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 3rem;
+    background: rgba(14,14,15,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 14px;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+  }
+
+  nav a {
+    text-decoration: none;
+    font-size: 13px;
+    color: var(--muted);
+    font-family: var(--mono);
+    letter-spacing: 0.03em;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--text); }
+
+  /* ── SECTIONS ── */
+  section {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 7rem 2rem;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 8rem;
+  }
+
+  .hero-tag {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeup 0.6s 0.2s forwards;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.8rem, 7vw, 5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    opacity: 0;
+    animation: fadeup 0.6s 0.4s forwards;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--muted);
+  }
+
+  .hero-subtitle {
+    margin-top: 1.8rem;
+    font-size: 1.1rem;
+    color: var(--muted);
+    max-width: 520px;
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeup 0.6s 0.6s forwards;
+  }
+
+  .hero-links {
+    margin-top: 3rem;
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeup 0.6s 0.8s forwards;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.65rem 1.4rem;
+    border-radius: 4px;
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #0e0e0f;
+    font-weight: 500;
+  }
+  .btn-primary:hover { background: var(--accent2); transform: translateY(-1px); }
+
+  .btn-ghost {
+    border: 1px solid var(--border2);
+    color: var(--muted);
+  }
+  .btn-ghost:hover { border-color: var(--text); color: var(--text); transform: translateY(-1px); }
+
+  @keyframes fadeup {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SECTION HEADER ── */
+  .sec-label {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+
+  .sec-title {
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    margin-bottom: 2.5rem;
+    color: var(--text);
+  }
+
+  /* ── ABOUT ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .about-text p {
+    color: var(--muted);
+    font-weight: 300;
+    margin-bottom: 1rem;
+  }
+  .about-text p strong {
+    color: var(--text);
+    font-weight: 400;
+  }
+
+  .about-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+  .detail-row:last-child { border-bottom: none; }
+
+  .detail-key {
+    font-family: var(--mono);
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 0.05em;
+  }
+
+  .detail-val {
+    color: var(--text);
+    font-weight: 300;
+  }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .skill-card {
+    background: var(--bg);
+    padding: 1.5rem;
+    transition: background 0.2s;
+  }
+  .skill-card:hover { background: var(--bg3); }
+
+  .skill-category {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    font-family: var(--mono);
+    font-size: 12px;
+    padding: 4px 10px;
+    background: var(--bg2);
+    border: 1px solid var(--border2);
+    border-radius: 3px;
+    color: var(--muted);
+    transition: all 0.2s;
+  }
+  .tag:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ── PROJECTS ── */
+  .projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .project-item {
+    padding: 1.8rem 2rem;
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1.5rem;
+    align-items: start;
+    transition: background 0.2s;
+  }
+  .project-item:last-child { border-bottom: none; }
+  .project-item:hover { background: var(--bg2); }
+
+  .project-number {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  .project-name {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .project-desc {
+    font-size: 14px;
+    color: var(--muted);
+    font-weight: 300;
+    max-width: 540px;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tech-badge {
+    font-family: var(--mono);
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 3px;
+    background: rgba(163, 230, 53, 0.08);
+    color: var(--accent);
+    border: 1px solid rgba(163, 230, 53, 0.2);
+  }
+
+  .project-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+    flex-shrink: 0;
+  }
+
+  .project-link {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s;
+    white-space: nowrap;
+  }
+  .project-link:hover { color: var(--accent); }
+  .project-link svg { flex-shrink: 0; }
+
+  /* ── EXPERIENCE ── */
+  .exp-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .exp-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 2rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .exp-item:last-child { border-bottom: none; }
+
+  .exp-date {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    padding-top: 3px;
+    line-height: 1.5;
+  }
+
+  .exp-role {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 2px;
+  }
+  .exp-company {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--accent);
+    margin-bottom: 0.8rem;
+  }
+  .exp-desc {
+    font-size: 14px;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  /* ── CONTACT ── */
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .contact-text p {
+    color: var(--muted);
+    font-weight: 300;
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .contact-link-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.2rem;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .contact-link-row:last-child { border-bottom: none; }
+  .contact-link-row:hover { background: var(--bg2); }
+
+  .contact-link-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .contact-link-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--bg3);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .contact-link-name {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text);
+  }
+  .contact-link-handle {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .contact-arrow {
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 14px;
+    transition: color 0.2s, transform 0.2s;
+  }
+  .contact-link-row:hover .contact-arrow { color: var(--accent); transform: translateX(3px); }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+  }
+  .footer-text {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .footer-text span { color: var(--accent); }
+
+  /* ── DIVIDER ── */
+  .section-divider {
+    max-width: 860px;
+    margin: 0 auto;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    nav { padding: 1rem 1.5rem; }
+    nav ul { gap: 1.5rem; }
+    section { padding: 5rem 1.5rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .contact-inner { grid-template-columns: 1fr; }
+    .project-item { grid-template-columns: 1fr; }
+    .project-links { flex-direction: row; align-items: flex-start; }
+    .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
 </head>
+<body>
 
-<body class="main-content">
-    <header class="section sec1 header active" id="home">
-        <div class="header-content">
-            <div class="left-header">
-                <div class="h-shape"></div>
-                <div class="image">
-                    <img src="img/profile_picture.png" alt="">
-                </div>
-            </div>
-            <div class="right-header">
-                <h1 class="name">
-                    Hi, I'm <span> Hernan Mendes.</span>
-                    A Backend Developer.
-                </h1>
-                <p>
-                    Responsibility, proactivity, and self-motivation are qualities that define me.
-                    I continuously learn to develop myself both personally and professionally, and
-                    I am seeking opportunities to grow as a professional in the field of data analysis,
-                    data exploitation, Big Data, Machine Learning, and Deep Learning.
-                </p>
-                <div class="btn-con">
-                    <a href="" class="main-btn">
-                        <span class="btn-text">Download CV</span>
-                        <span class="btn-icon"><i class="fas fa-download"></i></span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
-    <main>
-        <section class="section sec2 about" id="about">
-            <div class="main-title">
-                <h2>About <span>me</span><span class="bg-text">stats</span></h2>
-            </div>
-            <div class="about-container">
-                <div class="left-about">
-                    <h4>Information About me</h4>
-                    <p>
-                        I am a passionate software developer with an electronic engineering background. My interest in
-                        programming, robotics, and IoT technology sparked during my electronic technician studies and
-                        led me to pursue a degree in electronic engineering. <br><br>At university, I discovered my true
-                        passion for programming, so I became a teaching assistant for the C language fundamentals course
-                        and a research intern in the development of applications for embedded systems. After completing
-                        four years of my degree, in 2021, I shifted my focus entirely to software development and start
-                        working as a Python developer at BB-media and then at Gregario, performing as a web scraper.
-                        <br><br>Moving forward, I aspire to expand my knowledge as a backend developer and work on
-                        meaningful projects that use data to make a positive social impact, helping to create a better
-                        world through technology.
-                    </p>
-                    <div class="btn-con">
-                        <a href="" class="main-btn">
-                            <span class="btn-text">Download CV</span>
-                            <span class="btn-icon"><i class="fas fa-download"></i></span>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="right-about">
-                    <div class="about-item">
-                        <div class="abt-text">
-                            <p class="large-text">10+</p>
-                            <p class="small-text">Projects <br /> completed</p>
-                        </div>
-                    </div>
-                    <div class="about-item">
-                        <div class="abt-text">
-                            <p class="large-text">1+</p>
-                            <p class="small-text">Years of <br /> experience</p>
-                        </div>
-                    </div>
-                    <div class="about-item">
-                        <div class="abt-text">
-                            <p class="large-text">2</p>
-                            <p class="small-text">Happy <br /> clients</p>
-                        </div>
-                    </div>
-                    <div class="about-item">
-                        <div class="abt-text">
-                            <p class="large-text">0</p>
-                            <p class="small-text">Customer <br /> reviews</p>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-            <div class="about-stats">
-                <h4 class="stat-title">My Skills</h4>
-                <div class="grid-container">
-                    <div class="grid-item">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" />
-                        <p>Python</p>
-                    </div>
-                    <div class="grid-item">
-                        <i class="devicon-django-plain colored"></i>
-                        <p>Django</p>
-                    </div>
-                    <div class="grid-item">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Selenium_Logo.png" />
-                        <p>Selenium</p>
-                    </div>
-                    <div class="grid-item">
-                        <img class="logo" src="https://docs.celeryq.dev/en/stable/_static/celery_512.png" alt="Logo">
-                        <p>Celery</p>
-                    </div>
-                    <div class="grid-item">
-                        <i class="devicon-docker-plain colored"></i>
-                        <p>Docker</p>
-                    </div>
-                    <div class="grid-item">
-                        <i class="devicon-postgresql-plain colored"></i>
-                        <p>PostgreSQL</p>
-                    </div>
-                    <div class="grid-item">
-                        <i class="devicon-mongodb-plain colored"></i>
-                        <p>MongoDB</p>
-                    </div>
-                    <div class="grid-item">
-                        <i class="devicon-bash-plain colored"></i>
-                        <p>Bash</p>
-                    </div>
-                    <div class="grid-item">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" />
-                        <p>GCP</p>
-                    </div>
-                    <!--
-                    <div class="grid-item">
-                        <i class="devicon-git-plain colored"></i>
-                        <p>Git</p>
-                    </div>
-                    <div class="grid-item">
-                        <i class="devicon-html5-plain colored"></i>
-                        <p>HTML5</p>
-                    </div>
-                    <div class="grid-item">
-                        <i class="devicon-css3-plain colored"></i>
-                        <p>CSS3</p>
-                    </div>
-                    <div class="grid-item">
-                        <i class="devicon-sass-plain colored"></i>
-                        <p>Sass</p>
-                    </div>
-                    <div class="grid-item">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" />
-                        <p>Pandas</p>
-                    </div>
-                    <div class="grid-item">
-                        <img src="./img/scrapy-logo2.png" loading="eager" alt="Curso de Scrapy" decoding="async">
-                        <p>Scrapy</p>
-                    </div>
-                    <div class="grid-item">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" />
-                        <p>Linux</p>
-                    </div>
-                    -->
-                </div>
-                <!--
-                <div class="progress-bars">
-                    <div class="progress-bar">
-                        <p class="prog-title">html5</p>
-                        <div class="progress-con">
-                            <p class="prog-text">90%</p>
-                            <div class="progress">
-                                <span class="html"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="prog-title">css</p>
-                        <div class="progress-con">
-                            <p class="prog-text">10%</p>
-                            <div class="progress">
-                                <span class="css"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="prog-title">Python</p>
-                        <div class="progress-con">
-                            <p class="prog-text">80%</p>
-                            <div class="progress">
-                                <span class="python"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="prog-title">Django</p>
-                        <div class="progress-con">
-                            <p class="prog-text">50%</p>
-                            <div class="progress">
-                                <span class="django"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="prog-title">Docker</p>
-                        <div class="progress-con">
-                            <p class="prog-text">30%</p>
-                            <div class="progress">
-                                <span class="docker"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="prog-title">JavaScript</p>
-                        <div class="progress-con">
-                            <p class="prog-text">20%</p>
-                            <div class="progress">
-                                <span class="js"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                -->
-            </div>
-            <h4 class="stat-title">My Timeline</h4>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <p class="tl-duration">Ago 2022 - present</p>
-                    <h5>Python Developer<span> - Gregario</span></h5>
-                    <p>
-                        • Web scraping con Python <br>
-                        • Tareas de Backend
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <p class="tl-duration">Mar 2022 - Ago 2022</p>
-                    <h5>Python Developer<span> - BB media</span></h5>
-                    <p>
-                        Web scraping con Python (BeautifulSoup, Selenium, Requests, PyMongo, Concurrent.Futures,
-                        Pandas)<br>
-                        • Obtención de datos a través de APIs<br>
-                        • Uso de Git, MongoDB, Docker, Studio3T, Anaconda, Jupyter Notebooks<br>
-                        • Manejo de grandes cantidades de datos con PySpark<br>
-                        • Data Cleaning con Pandas y RegEx
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <p class="tl-duration">Mar 2020 - Mar 2022</p>
-                    <h5>Ayudante de Trabajos Prácticos (Informática I)<span> UTN (Facultad Regional Haedo)</span></h5>
-                    <p>
-                        • Resolución de ejercicios del lenguaje C en clases teórico-prácticas<br>
-                        • Planificación de clases<br>
-                        • Corrección de trabajos prácticos <br>
-                        • Clases de consulta.<br>
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <p class="tl-duration">Sep 2018 - Feb 2021</p>
-                    <h5>Becario (Grupo de I+D en Aplicaciones de Sistemas Embebidos)<span> UTN (Facultad Regional
-                            Haedo)</span></h5>
-                    <p>
-                        • Diseño y desarrollo de una interfaz gráfica de usuario que permite esquematizar y simular
-                        sistemas de enclavamiento ferroviario utilizando Python.<br>
-                        • Elaboración y documentación de circuitos digitales, didácticos, combinacionales y secuenciales
-                        en VHDL para ser implementados en la placa EDU-CIAA-FPGA.<br>
-                    </p>
-                </div>
-            </div>
-        </section>
-        <section class="section sec3" id="portfolio">
-            <div class="main-title">
-                <h2>My <span>Portfolio</span><span class="bg-text">Work</span></h2>
-            </div>
-            <p class="port-text">
-                Here is some of my work I've done in various languages and frameworks.
-            </p>
-            <div class="portfolios">
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/sea_level_predictor.jpeg" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>Sea Level Predictor</h3>
-                        <div class="icons">
-                            <a href="https://github.com/HernanMendes/boilerplate-sea-level-predictor" class="icon" target="_blank">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="section sec4" id="blogs">
-            <div class="blogs-content">
-                <div class="main-title">
-                    <h2>My <span>Blogs</span><span class="bg-text">Blogs</span></h2>
-                </div>
-                <div class="blogs">
-                    <div class="blog">
-                        <img src="img/portfolio1.jpg" alt="">
-                        <div class="blog-text">
-                            <h4>
-                                How to create your own website
-                            </h4>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
-                                Dolorum, quae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <img src="img/portfolio1.jpg" alt="">
-                        <div class="blog-text">
-                            <h4>
-                                How to create your own website
-                            </h4>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
-                                Dolorum, quae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <img src="img/portfolio1.jpg" alt="">
-                        <div class="blog-text">
-                            <h4>
-                                How to create your own website
-                            </h4>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
-                                Dolorum, quae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <img src="img/portfolio1.jpg" alt="">
-                        <div class="blog-text">
-                            <h4>
-                                How to create your own website
-                            </h4>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
-                                Dolorum, quae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <img src="img/portfolio1.jpg" alt="">
-                        <div class="blog-text">
-                            <h4>
-                                How to create your own website
-                            </h4>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
-                                Dolorum, quae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">~/tu-nombre</div>
+  <ul>
+    <li><a href="#about">about</a></li>
+    <li><a href="#skills">skills</a></li>
+    <li><a href="#projects">projects</a></li>
+    <li><a href="#experience">experience</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+</nav>
 
-            </div>
-        </section>
-        <section class="section sec5 contact" id="contact">
-            <div class="contact-container">
-                <div class="main-title">
-                    <h2>Contact <span>me</span><span class="bg-text">social</span></h2>
-                </div>
-                <div class="contact-content-con">
-                    <div class="left-contact">
-                        <h4>Contact me here</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
-                            Dolorum, quae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
-                        </p>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span>Location</span>
-                                </div>
-                                <p>
-                                    <span>: Buenos Aires, Argentina</span>
-                                </p>
-                            </div>
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fas fa-envelope"></i>
-                                    <span>Email</span>
-                                </div>
-                                <p>
-                                    <span>: hmendesgouveia@gmail.com</span>
-                                </p>
-                            </div>
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fas fa-user-graduate"></i>
-                                    <span>Education</span>
-                                </div>
-                                <p>
-                                    <span>: UTN-FRH</span>
-                                </p>
-                            </div>
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fas fa-globe-americas"></i>
-                                    <span>Languages</span>
-                                </div>
-                                <p>
-                                    <span>: Spanish, English</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="contact-icons">
-                            <div class="contact-icon">
-                                <!--
-                                <a href="https:/www.facebook.com" target="_blank">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a href="https:/www.twitter.com" target="_blank">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a href="https://www.youtube.com" target="_blank">
-                                    <i class="fab fa-youtube"></i>
-                                </a>
-                                -->
-                                <a href="https://github.com/HernanMendes" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="https://www.linkedin.com/in/hmendesgouveia/" target="_blank">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="right-contact">
-                        <form action="" class="contact-form">
-                            <div class="input-control i-c-2">
-                                <input type="text" required placeholder="YOUR NAME">
-                                <input type="email" required placeholder="YOUR EMAIL">
-                            </div>
-                            <div class="input-control">
-                                <input type="text" required placeholder="ENTER SUBJECT">
-                            </div>
-                            <div class="input-control">
-                                <textarea name="" id="" cols="15" rows="8" placeholder="Message here..."></textarea>
-                            </div>
-                            <div class="submit-btn">
-                                <a href="" class="main-btn">
-                                    <span class="btn-text">Download CV</span>
-                                    <span class="btn-icon"><i class="fas fa-download"></i></span>
-                                </a>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-tag">// Python &amp; Django Developer</p>
+  <h1>
+    Hola, soy<br>
+    <em>Tu Nombre</em>
+  </h1>
+  <p class="hero-subtitle">
+    Construyo aplicaciones web robustas y APIs escalables. 
+    Apasionado por el código limpio, las buenas prácticas y resolver problemas reales.
+  </p>
+  <div class="hero-links">
+    <a href="#projects" class="btn btn-primary">Ver proyectos →</a>
+    <a href="#contact" class="btn btn-ghost">Contacto</a>
+    <a href="https://github.com/tu-usuario" target="_blank" class="btn btn-ghost">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+      GitHub
+    </a>
+  </div>
+</section>
 
-    <div class="controlls">
-        <div class="control control1-1 active-btn" data-id="home">
-            <i class="fas fa-home"></i>
+<div class="section-divider"></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <p class="sec-label reveal">01 / about</p>
+  <h2 class="sec-title reveal">Un poco sobre mí</h2>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>
+        Soy desarrollador backend especializado en <strong>Python y Django</strong>, con experiencia construyendo 
+        aplicaciones web, APIs REST y sistemas que escalan. Me interesa escribir código mantenible y resolver 
+        problemas que importen.
+      </p>
+      <p>
+        Cuando no estoy programando, probablemente esté explorando nuevas tecnologías, leyendo sobre 
+        arquitectura de software, o tomando mate. 🧉
+      </p>
+      <p>
+        Actualmente <strong>disponible para nuevas oportunidades</strong> — ya sean proyectos freelance o posiciones full-time.
+      </p>
+    </div>
+    <div class="about-details reveal">
+      <div class="detail-row">
+        <span class="detail-key">location</span>
+        <span class="detail-val">Buenos Aires, AR</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-key">experience</span>
+        <span class="detail-val">+X años</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-key">focus</span>
+        <span class="detail-val">Backend / APIs</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-key">education</span>
+        <span class="detail-val">Tu carrera</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-key">languages</span>
+        <span class="detail-val">Español, English</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-key">status</span>
+        <span class="detail-val" style="color: var(--accent2);">● disponible</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <p class="sec-label reveal">02 / skills</p>
+  <h2 class="sec-title reveal">Stack tecnológico</h2>
+  <div class="skills-grid reveal">
+    <div class="skill-card">
+      <p class="skill-category">Backend</p>
+      <div class="skill-tags">
+        <span class="tag">Python</span>
+        <span class="tag">Django</span>
+        <span class="tag">DRF</span>
+        <span class="tag">FastAPI</span>
+        <span class="tag">Celery</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <p class="skill-category">Databases</p>
+      <div class="skill-tags">
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">MySQL</span>
+        <span class="tag">Redis</span>
+        <span class="tag">SQLite</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <p class="skill-category">DevOps & Tools</p>
+      <div class="skill-tags">
+        <span class="tag">Docker</span>
+        <span class="tag">Git</span>
+        <span class="tag">Linux</span>
+        <span class="tag">Nginx</span>
+        <span class="tag">GitHub Actions</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <p class="skill-category">Frontend</p>
+      <div class="skill-tags">
+        <span class="tag">HTML/CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">HTMX</span>
+        <span class="tag">Bootstrap</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <p class="skill-category">Cloud & Deploy</p>
+      <div class="skill-tags">
+        <span class="tag">Railway</span>
+        <span class="tag">Render</span>
+        <span class="tag">AWS S3</span>
+        <span class="tag">Heroku</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <p class="skill-category">Practices</p>
+      <div class="skill-tags">
+        <span class="tag">REST APIs</span>
+        <span class="tag">TDD</span>
+        <span class="tag">Clean Code</span>
+        <span class="tag">Agile</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <p class="sec-label reveal">03 / projects</p>
+  <h2 class="sec-title reveal">Proyectos destacados</h2>
+  <div class="projects-list reveal">
+
+    <div class="project-item">
+      <div>
+        <p class="project-number">01</p>
+        <p class="project-name">Nombre del Proyecto</p>
+        <p class="project-desc">
+          Descripción del proyecto. Qué problema resuelve, qué hace, y por qué es interesante.
+          Podés ser técnico acá: mencioná el volumen de datos, usuarios, o el desafío técnico principal.
+        </p>
+        <div class="project-tech">
+          <span class="tech-badge">Django</span>
+          <span class="tech-badge">DRF</span>
+          <span class="tech-badge">PostgreSQL</span>
+          <span class="tech-badge">Docker</span>
         </div>
-        <div class="control control1-2" data-id="about">
-            <i class="fas fa-user"></i>
-        </div>
-        <div class="control control1-3" data-id="portfolio">
-            <i class="fas fa-briefcase"></i>
-        </div>
-        <!--
-        <div class="control control1-4" data-id="blogs">
-            <i class="fas fa-newspaper"></i>
-        </div>
-        -->
-        <div class="control control1-5" data-id="contact">
-            <i class="fas fa-envelope-open"></i>
-        </div>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/tu-usuario/proyecto" target="_blank" class="project-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          repo
+        </a>
+        <a href="https://tu-proyecto.up.railway.app" target="_blank" class="project-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          live
+        </a>
+      </div>
     </div>
 
-    <div class="theme-btn">
-        <i class="fas fa-adjust"></i>
+    <div class="project-item">
+      <div>
+        <p class="project-number">02</p>
+        <p class="project-name">Otro Proyecto</p>
+        <p class="project-desc">
+          Describí qué construiste y qué aprendiste. Los recruiters técnicos valoran 
+          que menciones decisiones de arquitectura o desafíos que resolviste.
+        </p>
+        <div class="project-tech">
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">FastAPI</span>
+          <span class="tech-badge">Redis</span>
+          <span class="tech-badge">Celery</span>
+        </div>
+      </div>
+      <div class="project-links">
+        <a href="#" target="_blank" class="project-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          repo
+        </a>
+      </div>
     </div>
 
-    <script src="app.js"></script>
+    <div class="project-item">
+      <div>
+        <p class="project-number">03</p>
+        <p class="project-name">Tercer Proyecto</p>
+        <p class="project-desc">
+          Sumá un tercer proyecto para mostrar diversidad de stack o tipos de problema.
+          Una CLI, un scraper, una integración con una API externa, todos suman.
+        </p>
+        <div class="project-tech">
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">SQLite</span>
+          <span class="tech-badge">Click</span>
+        </div>
+      </div>
+      <div class="project-links">
+        <a href="#" target="_blank" class="project-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          repo
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <p class="sec-label reveal">04 / experience</p>
+  <h2 class="sec-title reveal">Experiencia</h2>
+  <div class="exp-list">
+
+    <div class="exp-item reveal">
+      <div class="exp-date">2023 — presente</div>
+      <div>
+        <p class="exp-role">Tu Rol Actual</p>
+        <p class="exp-company">Empresa S.A.</p>
+        <p class="exp-desc">
+          Describí brevemente qué hacés: tecnologías que usás, tipo de sistemas que construís, 
+          metodología del equipo. Una o dos oraciones que den contexto del rol.
+        </p>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-date">2021 — 2023</div>
+      <div>
+        <p class="exp-role">Rol Anterior</p>
+        <p class="exp-company">Otra Empresa</p>
+        <p class="exp-desc">
+          Idem anterior. Podés mencionar un logro concreto: "reduje el tiempo de respuesta de la API 
+          un 40%" o "migré el sistema de X a Y" siempre impresiona más que responsabilidades genéricas.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="sec-label reveal">05 / contact</p>
+  <h2 class="sec-title reveal">Hablemos</h2>
+  <div class="contact-inner">
+    <div class="contact-text reveal">
+      <p>
+        Estoy abierto a nuevas oportunidades laborales, proyectos freelance 
+        o simplemente charlar sobre tecnología. No dudes en escribirme.
+      </p>
+      <a href="mailto:tu@email.com" class="btn btn-primary">Enviar email →</a>
+    </div>
+    <div class="contact-links reveal">
+      <a href="https://github.com/tu-usuario" target="_blank" class="contact-link-row">
+        <div class="contact-link-left">
+          <div class="contact-link-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--muted)"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          </div>
+          <div>
+            <p class="contact-link-name">GitHub</p>
+            <p class="contact-link-handle">@tu-usuario</p>
+          </div>
+        </div>
+        <span class="contact-arrow">→</span>
+      </a>
+      <a href="https://linkedin.com/in/tu-perfil" target="_blank" class="contact-link-row">
+        <div class="contact-link-left">
+          <div class="contact-link-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--muted)"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </div>
+          <div>
+            <p class="contact-link-name">LinkedIn</p>
+            <p class="contact-link-handle">tu-perfil</p>
+          </div>
+        </div>
+        <span class="contact-arrow">→</span>
+      </a>
+      <a href="mailto:tu@email.com" class="contact-link-row">
+        <div class="contact-link-left">
+          <div class="contact-link-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <p class="contact-link-name">Email</p>
+            <p class="contact-link-handle">tu@email.com</p>
+          </div>
+        </div>
+        <span class="contact-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-text">Built with <span>♥</span> — Tu Nombre © 2025</p>
+  <p class="footer-text">Buenos Aires, Argentina</p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
 </body>
-
 </html>
