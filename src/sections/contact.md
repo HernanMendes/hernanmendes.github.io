@@ -1,1 +1,1 @@
-Estoy abierto a nuevas oportunidades en data engineering, scraping y automatización, o simplemente para charlar sobre tecnología. No dudes en escribirme.
+Estoy abierto a nuevas oportunidades en data engineering, scraping y automatización, tanto en proyectos freelance como en posiciones full-time. O simplemente, si quieres charlar sobre tecnología, no dudes en contactarme!

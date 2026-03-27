@@ -427,6 +427,11 @@
     align-items: start;
   }
 
+  .contact-text,
+  .contact-links {
+    align-self: start;
+  }
+
   .contact-text p {
     color: var(--muted);
     font-weight: 300;
@@ -441,6 +446,7 @@
     border: 1px solid var(--border);
     border-radius: 8px;
     overflow: hidden;
+    margin-top: 0;
   }
 
   .contact-link-row {
