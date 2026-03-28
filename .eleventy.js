@@ -6,6 +6,15 @@ module.exports = function (eleventyConfig) {
   const md = markdownIt({ html: true, breaks: true, linkify: true });
 
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+  eleventyConfig.addPassthroughCopy({
+    "src/favicon.ico": "favicon.ico",
+    "src/favicon.svg": "favicon.svg",
+    "src/favicon-96x96.png": "favicon-96x96.png",
+    "src/apple-touch-icon.png": "apple-touch-icon.png",
+    "src/web-app-manifest-192x192.png": "web-app-manifest-192x192.png",
+    "src/web-app-manifest-512x512.png": "web-app-manifest-512x512.png",
+    "src/site.webmanifest": "site.webmanifest"
+  });
   eleventyConfig.addCollection("blog_es", (collection) => {
     return collection
       .getFilteredByTag("blog")

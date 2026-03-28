@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html lang="{{ lang or 'es' }}">
 <head>
-  {% set pageTitle = title or site.title %}
-  {% set pageDescription = description or site.description %}
-  {% set canonicalUrl = (site.url or '') ~ (page.url or '/') %}
+  {% if lang == "en" %}
+    {% set activeSite = site_en %}
+  {% else %}
+    {% set activeSite = site %}
+  {% endif %}
+  {% set pageTitle = title or activeSite.title %}
+  {% set pageDescription = description or activeSite.description %}
+  {% set canonicalUrl = (activeSite.url or '') ~ (page.url or '/') %}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ pageTitle }}</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <meta name="description" content="{{ pageDescription }}">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="{{ canonicalUrl }}">
-  <link rel="alternate" hreflang="es" href="{{ site.url }}/">
-  <link rel="alternate" hreflang="en" href="{{ site.url }}/en/">
-  <link rel="alternate" hreflang="x-default" href="{{ site.url }}/">
+  <link rel="alternate" hreflang="es" href="{{ activeSite.url }}/">
+  <link rel="alternate" hreflang="en" href="{{ activeSite.url }}/en/">
+  <link rel="alternate" hreflang="x-default" href="{{ activeSite.url }}/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="{{ pageTitle }}">
   <meta property="og:description" content="{{ pageDescription }}">
   <meta property="og:url" content="{{ canonicalUrl }}">
-  <meta property="og:site_name" content="{{ site.title }}">
-  <meta property="og:locale" content="{{ site.locale }}">
+  <meta property="og:site_name" content="{{ activeSite.title }}">
+  <meta property="og:locale" content="{{ activeSite.locale }}">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{{ pageTitle }}">
   <meta name="twitter:description" content="{{ pageDescription }}">
@@ -30,14 +40,14 @@
     {
       "@context": "https://schema.org",
       "@type": "Person",
-      "name": "{{ site.hero.name }}",
-      "jobTitle": "{{ site.seo.jobTitle }}",
-      "url": "{{ site.url }}",
-      "sameAs": [{% for item in site.seo.sameAs %}"{{ item }}"{% if not loop.last %}, {% endif %}{% endfor %}],
+      "name": "{{ activeSite.hero.name }}",
+      "jobTitle": "{{ activeSite.seo.jobTitle }}",
+      "url": "{{ activeSite.url }}",
+      "sameAs": [{% for item in activeSite.seo.sameAs %}"{{ item }}"{% if not loop.last %}, {% endif %}{% endfor %}],
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "{{ site.seo.location }}",
-        "addressCountry": "{{ site.seo.country }}"
+        "addressLocality": "{{ activeSite.seo.location }}",
+        "addressCountry": "{{ activeSite.seo.country }}"
       }
     }
   </script>
