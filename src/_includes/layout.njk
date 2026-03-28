@@ -24,7 +24,7 @@
   <meta name="twitter:description" content="{{ pageDescription }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/styles.css?v={{ site.version }}">
+  <link rel="stylesheet" href="{{ '/assets/styles.css' | assetUrl }}">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -43,6 +43,6 @@
 </head>
 <body>
   {{ content | safe }}
-  <script src="/assets/main.js"></script>
+  <script src="{{ '/assets/main.js' | assetUrl }}"></script>
 </body>
 </html>
