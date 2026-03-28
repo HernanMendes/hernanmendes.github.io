@@ -41,9 +41,9 @@
     "name": "Hernan Mendes",
     "links": [
       { "label": "Ver proyectos →", "href": "#projects", "style": "primary" },
-      { "label": "LinkedIn", "href": "https://www.linkedin.com/in/hmendesgouveia", "style": "ghost", "icon": "linkedin" },
+      { "label": "Descargar CV", "href": "/assets/hernan-mendes-cv-es.pdf", "style": "ghost", "icon": "download", "download": true },
       { "label": "GitHub", "href": "https://github.com/HernanMendes", "style": "ghost", "icon": "github" },
-      { "label": "Contacto", "href": "#contact", "style": "ghost", "icon": "email" }
+      { "label": "LinkedIn", "href": "https://www.linkedin.com/in/hmendesgouveia", "style": "ghost", "icon": "linkedin" }
     ]
   },
   "about": {
