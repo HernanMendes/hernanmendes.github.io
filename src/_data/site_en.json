@@ -1,7 +1,7 @@
 {
   "title": "Hernan Mendes — Python Developer",
   "url": "https://hernanmendes.github.io",
-  "description": "Python developer focused on scraping, data pipelines, and automation. Experience with Django, Celery, PostgreSQL, and data engineering.",
+  "description": "Python developer focused on scraping, data pipelines, and automation. Experience with Django, Celery, Airflow, Docker, and PostgreSQL.",
   "locale": "en_US",
   "seo": {
     "jobTitle": "Python Developer",
