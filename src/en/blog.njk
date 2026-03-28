@@ -1,0 +1,40 @@
+---
+layout: layout.njk
+lang: en
+permalink: /en/blog/
+title: Blog — Hernan Mendes
+description: Notes about Python, scraping, and data pipelines.
+---
+
+{% set site = site_en %}
+
+<section class="blog">
+  <div class="blog-header">
+    <div>
+      <p class="hero-tag">// Blog</p>
+      <h1>Blog</h1>
+      <p class="hero-subtitle">Notes about Python, scraping, and data pipelines.</p>
+    </div>
+    <div class="blog-actions">
+      <a class="lang-toggle" href="/blog/" aria-label="{{ site.ui.langSwitchAria }}">{{ site.ui.langSwitch }}</a>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" data-theme-label-light="{{ site.ui.themeToggleLight }}" data-theme-label-dark="{{ site.ui.themeToggleDark }}">
+        {{ site.ui.themeToggleLight }}
+      </button>
+      <a class="btn btn-ghost" href="/en/">{{ site.ui.blogHome }}</a>
+    </div>
+  </div>
+
+  <div class="blog-list">
+    {% for post in collections.blog_en %}
+    <article class="blog-item">
+      <p class="blog-meta">{{ post.date | dateEn }}</p>
+      <h2 class="blog-title"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+      {% if post.data.description %}
+      <p class="blog-excerpt">{{ post.data.description }}</p>
+      {% endif %}
+    </article>
+    {% else %}
+    <p class="blog-empty">No posts yet.</p>
+    {% endfor %}
+  </div>
+</section>

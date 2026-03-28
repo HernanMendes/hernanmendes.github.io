@@ -1,0 +1,28 @@
+---
+layout: layout.njk
+---
+
+<section class="blog blog-post">
+  {% set isEn = (lang == "en") %}
+  {% if isEn %}
+    {% set blogHref = "/en/blog/" %}
+    {% set homeHref = "/en/" %}
+  {% else %}
+    {% set blogHref = "/blog/" %}
+    {% set homeHref = "/" %}
+  {% endif %}
+  <a class="btn btn-ghost blog-home" href="{{ homeHref }}">{% if isEn %}Back to home{% else %}Volver al inicio{% endif %}</a>
+  <p class="hero-tag">// Blog</p>
+  <h1>{{ title }}</h1>
+  {% if isEn %}
+  <p class="blog-meta">{{ page.date | dateEn }}</p>
+  {% else %}
+  <p class="blog-meta">{{ page.date | dateEs }}</p>
+  {% endif %}
+  <div class="blog-content">
+    {{ content | safe }}
+  </div>
+  <div class="blog-post-actions">
+    <a class="blog-back" href="{{ blogHref }}">← {% if isEn %}Back to blog{% else %}Volver al blog{% endif %}</a>
+  </div>
+</section>
