@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="{{ lang or 'es' }}">
 <head>
+  {% set pageTitle = title or site.title %}
+  {% set pageDescription = description or site.description %}
+  {% set canonicalUrl = (site.url or '') ~ (page.url or '/') %}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title or site.title }}</title>
+  <title>{{ pageTitle }}</title>
+  <meta name="description" content="{{ pageDescription }}">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="{{ canonicalUrl }}">
+  <link rel="alternate" hreflang="es" href="{{ site.url }}/">
+  <link rel="alternate" hreflang="en" href="{{ site.url }}/en/">
+  <link rel="alternate" hreflang="x-default" href="{{ site.url }}/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ pageTitle }}">
+  <meta property="og:description" content="{{ pageDescription }}">
+  <meta property="og:url" content="{{ canonicalUrl }}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:locale" content="{{ site.locale }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ pageTitle }}">
+  <meta name="twitter:description" content="{{ pageDescription }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/styles.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "{{ site.hero.name }}",
+      "jobTitle": "{{ site.seo.jobTitle }}",
+      "url": "{{ site.url }}",
+      "sameAs": [{% for item in site.seo.sameAs %}"{{ item }}"{% if not loop.last %}, {% endif %}{% endfor %}],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "{{ site.seo.location }}",
+        "addressCountry": "{{ site.seo.country }}"
+      }
+    }
+  </script>
 </head>
 <body>
   {{ content | safe }}
