@@ -13,12 +13,15 @@ permalink: /blog/
       <h1>Blog</h1>
       <p class="hero-subtitle">Notas sobre Python, scraping y data pipelines.</p>
     </div>
-    <div class="blog-actions">
+    <div class="blog-actions" data-mobile-nav>
       <a class="lang-toggle" href="/en/blog/" aria-label="{{ site.ui.langSwitchAria }}">{{ site.ui.langSwitch }}</a>
       <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" data-theme-label-light="{{ site.ui.themeToggleLight }}" data-theme-label-dark="{{ site.ui.themeToggleDark }}">
         {{ site.ui.themeToggleLight }}
       </button>
-      <a class="btn btn-ghost" href="/">{{ site.ui.blogHome }}</a>
+      <a class="btn btn-ghost" href="/">
+        <span class="label-full">{{ site.ui.blogHome }}</span>
+        <span class="label-short" aria-hidden="true">Inicio</span>
+      </a>
     </div>
   </div>
 

@@ -234,6 +234,8 @@
     flex-wrap: wrap;
     justify-self: end;
   }
+  .blog-actions .label-short { display: none; }
+  .blog-actions .label-full { display: inline; }
 
   @media (max-width: 820px) {
     .blog-header {
@@ -718,7 +720,7 @@
       transition: transform 0.25s ease;
       will-change: transform;
     }
-    nav.nav-hidden { transform: translateY(-100%); }
+    .nav-hidden { transform: translateY(-100%); }
     .nav-logo { font-size: 12px; }
     .nav-actions {
       width: 100%;
@@ -761,6 +763,36 @@
     .hero-links .btn {
       width: 100%;
       justify-content: center;
+    }
+    .blog {
+      padding-top: 6rem;
+    }
+    .blog-actions {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 0.9rem 1.5rem;
+      background: var(--nav-bg);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      gap: 0.6rem;
+      transition: transform 0.25s ease;
+      will-change: transform;
+    }
+  .blog-actions .btn,
+  .blog-actions .theme-toggle,
+  .blog-actions .lang-toggle {
+    padding: 0.35rem 0.7rem;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+    @media (max-width: 420px) {
+      .blog-actions .label-full { display: none; }
+      .blog-actions .label-short { display: inline; }
     }
   }
   .nav-actions {

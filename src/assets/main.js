@@ -40,13 +40,16 @@
   }
 
   const nav = document.querySelector('nav');
-  if (nav) {
+  const mobileNavs = Array.from(document.querySelectorAll('[data-mobile-nav]'));
+  if (nav) mobileNavs.unshift(nav);
+
+  if (mobileNavs.length) {
     let lastY = window.scrollY;
     const threshold = 12;
 
     const onScroll = () => {
       if (window.innerWidth > 640) {
-        nav.classList.remove('nav-hidden');
+        mobileNavs.forEach(el => el.classList.remove('nav-hidden'));
         lastY = window.scrollY;
         return;
       }
@@ -55,9 +58,9 @@
       const delta = currentY - lastY;
 
       if (currentY < 20) {
-        nav.classList.remove('nav-hidden');
+        mobileNavs.forEach(el => el.classList.remove('nav-hidden'));
       } else if (delta > threshold) {
-        nav.classList.add('nav-hidden');
+        mobileNavs.forEach(el => el.classList.add('nav-hidden'));
       }
 
       lastY = currentY;
