@@ -590,6 +590,12 @@
     font-weight: 300;
     line-height: 1.7;
   }
+  .exp-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 0.9rem;
+  }
 
   /* ── CONTACT ── */
   .contact-inner {

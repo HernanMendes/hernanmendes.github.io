@@ -9,6 +9,13 @@
         <p class="exp-role">{{ item.role }}</p>
         <p class="exp-company">{{ item.company }}</p>
         <p class="exp-desc">{{ item.description }}</p>
+        {% if item.tags %}
+        <div class="exp-tags">
+          {% for tag in item.tags %}
+          <span class="tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
       </div>
     </div>
     {% endfor %}

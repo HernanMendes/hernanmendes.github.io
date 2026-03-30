@@ -114,43 +114,50 @@
       "date": "Ago 2022 — Presente",
       "role": "Python Developer",
       "company": "Gregario · Remoto (Chile)",
-      "description": "Desarrollo y mantenimiento de scrapers en un proyecto Django. Orquestación con Celery y Redis, scraping web y móvil con Selenium/Appium, y almacenamiento en PostgreSQL. Integración de flujos hacia Airflow y soporte a casos geoespaciales con PostGIS/GeoDjango y Folium."
+      "description": "Desarrollo y mantenimiento de scrapers en un proyecto Django. Orquestación con Celery y Redis, scraping web y móvil con Selenium/Appium, y almacenamiento en PostgreSQL. Integración de flujos hacia Airflow y soporte a casos geoespaciales con PostGIS/GeoDjango y Folium.",
+      "tags": ["Django", "Celery", "Redis", "Selenium", "Appium", "PostgreSQL", "Airflow", "PostGIS", "GeoDjango", "Folium"]
     },
     {
       "date": "Mar 2022 — Ago 2022",
       "role": "Data Engineer",
       "company": "BB Media · Buenos Aires",
-      "description": "Desarrollo de soluciones de web scraping para sitios de cine y series. Recolección de opiniones con Twitter API, análisis preliminar en Pandas y persistencia en MongoDB."
+      "description": "Desarrollo de soluciones de web scraping para sitios de cine y series. Recolección de opiniones con Twitter API, análisis preliminar en Pandas y persistencia en MongoDB.",
+      "tags": ["Python", "Scrapy", "Twitter API", "Pandas", "MongoDB"]
     },
     {
       "date": "Oct 2020 — Mar 2022",
       "role": "RF & Telecommunications Lab Technician",
       "company": "TERALAB SRL · Ituzaingó",
-      "description": "Ensayos RF para certificaciones ENACOM, redacción de informes técnicos y gestión del sistema HERTZ. Coordinación con clientes técnicos y comerciales."
+      "description": "Ensayos RF para certificaciones ENACOM, redacción de informes técnicos y gestión del sistema HERTZ. Coordinación con clientes técnicos y comerciales.",
+      "tags": ["RF", "ENACOM", "HERTZ", "Documentación"]
     },
     {
       "date": "Mar 2020 — Mar 2022",
       "role": "Teaching Assistant — Computer Science I",
       "company": "UTN FR Haedo",
-      "description": "Clases teórico-prácticas en C, planificación de lecciones, corrección de trabajos y consultas."
+      "description": "Clases teórico-prácticas en C, planificación de lecciones, corrección de trabajos y consultas.",
+      "tags": ["C", "Docencia", "Planificación", "Corrección"]
     },
     {
       "date": "Sep 2018 — Feb 2021",
       "role": "Intern — R&D Embedded Systems",
       "company": "UTN FR Haedo",
-      "description": "Desarrollo de interfaz gráfica en Python para simulación de enclavamiento ferroviario y diseño de circuitos digitales en VHDL para EDU-CIAA-FPGA."
+      "description": "Desarrollo de interfaz gráfica en Python para simulación de enclavamiento ferroviario y diseño de circuitos digitales en VHDL para EDU-CIAA-FPGA.",
+      "tags": ["Python", "GUI", "VHDL", "FPGA"]
     },
     {
       "date": "Mar 2019 — Oct 2020",
       "role": "Electronics Lab Technician",
       "company": "Cremonesi Hnos. · Ciudadela",
-      "description": "Reparación e instalación de equipos electrónicos para automatización, mantenimiento de máquinas eléctricas e inventario de componentes."
+      "description": "Reparación e instalación de equipos electrónicos para automatización, mantenimiento de máquinas eléctricas e inventario de componentes.",
+      "tags": ["Electrónica", "Automatización", "Mantenimiento", "Inventario"]
     },
     {
       "date": "Ago 2017 — Ene 2018",
       "role": "Intern — Technical Support",
       "company": "Argomys S.A. · Villa Sarmiento",
-      "description": "Instalación, configuración y reparación de equipos de seguridad electrónica."
+      "description": "Instalación, configuración y reparación de equipos de seguridad electrónica.",
+      "tags": ["Soporte", "Instalación", "Configuración", "Reparación"]
     }
   ],
   "contact": {
