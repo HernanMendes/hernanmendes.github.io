@@ -745,6 +745,13 @@
     .project-links { flex-direction: row; align-items: flex-start; }
     .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
     footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    .detail-row {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      align-items: start;
+      column-gap: 1rem;
+    }
+    .detail-val { text-align: right; }
   }
   .nav-actions {
     display: flex;
