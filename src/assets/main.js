@@ -58,8 +58,6 @@
         nav.classList.remove('nav-hidden');
       } else if (delta > threshold) {
         nav.classList.add('nav-hidden');
-      } else if (delta < -threshold) {
-        nav.classList.remove('nav-hidden');
       }
 
       lastY = currentY;
