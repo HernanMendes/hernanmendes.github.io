@@ -1,11 +1,11 @@
 <nav>
   <div class="nav-logo">~/hmendes</div>
+  <ul>
+    {% for item in site.nav %}
+    <li><a href="{{ item.href }}">{{ item.label }}</a></li>
+    {% endfor %}
+  </ul>
   <div class="nav-actions">
-    <ul>
-      {% for item in site.nav %}
-      <li><a href="{{ item.href }}">{{ item.label }}</a></li>
-      {% endfor %}
-    </ul>
     <a class="lang-toggle" href="{% if lang == 'en' %}/{% else %}/en/{% endif %}" aria-label="{{ site.ui.langSwitchAria }}">
       {{ site.ui.langSwitch }}
     </a>
