@@ -38,3 +38,32 @@
       applyTheme(next);
     });
   }
+
+  const nav = document.querySelector('nav');
+  if (nav) {
+    let lastY = window.scrollY;
+    const threshold = 12;
+
+    const onScroll = () => {
+      if (window.innerWidth > 640) {
+        nav.classList.remove('nav-hidden');
+        lastY = window.scrollY;
+        return;
+      }
+
+      const currentY = window.scrollY;
+      const delta = currentY - lastY;
+
+      if (currentY < 20) {
+        nav.classList.remove('nav-hidden');
+      } else if (delta > threshold) {
+        nav.classList.add('nav-hidden');
+      } else if (delta < -threshold) {
+        nav.classList.remove('nav-hidden');
+      }
+
+      lastY = currentY;
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
