@@ -312,6 +312,12 @@
     position: relative;
   }
 
+  .blog-post-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 2.2rem;
+  }
+
   .blog-home {
     position: absolute;
     top: 3rem;
@@ -765,6 +771,9 @@
       justify-content: center;
     }
     .blog {
+      padding-top: 6rem;
+    }
+    .blog-post {
       padding-top: 6rem;
     }
     .blog-actions {

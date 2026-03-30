@@ -5,13 +5,25 @@ layout: layout.njk
 <section class="blog blog-post">
   {% set isEn = (lang == "en") %}
   {% if isEn %}
+    {% set site = site_en %}
     {% set blogHref = "/en/blog/" %}
     {% set homeHref = "/en/" %}
   {% else %}
     {% set blogHref = "/blog/" %}
     {% set homeHref = "/" %}
   {% endif %}
-  <a class="btn btn-ghost blog-home" href="{{ homeHref }}">{% if isEn %}Back to home{% else %}Volver al inicio{% endif %}</a>
+  <div class="blog-post-header">
+    <div class="blog-actions" data-mobile-nav>
+      <a class="lang-toggle" href="{% if isEn %}/blog/{% else %}/en/blog/{% endif %}" aria-label="{{ site.ui.langSwitchAria }}">{{ site.ui.langSwitch }}</a>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" data-theme-label-light="{{ site.ui.themeToggleLight }}" data-theme-label-dark="{{ site.ui.themeToggleDark }}">
+        {{ site.ui.themeToggleLight }}
+      </button>
+      <a class="btn btn-ghost" href="{{ homeHref }}">
+        <span class="label-full">{{ site.ui.blogHome }}</span>
+        <span class="label-short" aria-hidden="true">{% if isEn %}Home{% else %}Inicio{% endif %}</span>
+      </a>
+    </div>
+  </div>
   <p class="hero-tag">// Blog</p>
   <h1>{{ title }}</h1>
   {% if isEn %}
