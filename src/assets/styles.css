@@ -752,6 +752,16 @@
       column-gap: 1rem;
     }
     .detail-val { text-align: right; }
+    .hero-links {
+      margin-top: 2rem;
+      flex-direction: column;
+      gap: 0.75rem;
+      width: 100%;
+    }
+    .hero-links .btn {
+      width: 100%;
+      justify-content: center;
+    }
   }
   .nav-actions {
     display: flex;
