@@ -15,15 +15,18 @@ module.exports = function (eleventyConfig) {
     "src/web-app-manifest-512x512.png": "web-app-manifest-512x512.png",
     "src/site.webmanifest": "site.webmanifest"
   });
+  const isProd = (process.env.ELEVENTY_ENV || "development") === "production";
   eleventyConfig.addCollection("blog_es", (collection) => {
     return collection
       .getFilteredByTag("blog")
+      .filter((item) => !isProd || item.data.draft !== true)
       .filter((item) => item.data.lang === "es")
       .sort((a, b) => b.date - a.date);
   });
   eleventyConfig.addCollection("blog_en", (collection) => {
     return collection
       .getFilteredByTag("blog")
+      .filter((item) => !isProd || item.data.draft !== true)
       .filter((item) => item.data.lang === "en")
       .sort((a, b) => b.date - a.date);
   });

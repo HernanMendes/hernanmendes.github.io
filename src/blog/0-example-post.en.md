@@ -5,6 +5,7 @@ title: "My first post"
 description: "A short introduction to what I plan to write about."
 date: 2026-03-28
 tags: ["blog"]
+draft: true
 ---
 
 This is a sample post in English. You can delete this file and add new posts in `src/blog/`.

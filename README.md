@@ -17,6 +17,9 @@ npm run build
 
 # Compila y levanta servidor local con recarga
 npm run dev
+
+# Compila como producción (oculta drafts)
+ELEVENTY_ENV=production npm run build
 ```
 
 ## Estructura del proyecto
@@ -68,6 +71,7 @@ Si agregás o quitás una sección visible en la home, hacelo desde `src/index.n
 - Evitar editar HTML generado en `_site/`.
 - Si necesitás cambiar el layout o el orden visual, hacelo en los partials o en `src/index.njk`.
 - Los assets nuevos (imágenes, CSS, JS, fuentes) deben ir en `src/assets/`.
+- Para ocultar posts, usar `draft: true` en el frontmatter. En local se ven; en producción se ocultan con `ELEVENTY_ENV=production`.
 
 ## Notas
 - Si ves cambios en `_site/`, provienen del proceso de build.

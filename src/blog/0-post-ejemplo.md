@@ -5,6 +5,7 @@ title: "Mi primer post"
 description: "Una introduccion al blog y a los temas que voy a cubrir."
 date: 2026-03-28
 tags: ["blog"]
+draft: false
 ---
 
 Este es un post de ejemplo. Podes borrar este archivo y crear nuevos posts en `src/blog/`.
