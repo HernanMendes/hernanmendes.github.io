@@ -316,6 +316,17 @@
     font-style: italic;
     font-weight: 500;
   }
+  .blog-content blockquote {
+    margin: 1.5rem 0;
+    padding: 0.75rem 1.1rem;
+    border-left: 3px solid var(--accent);
+    background: var(--bg2);
+    color: var(--text);
+    font-style: italic;
+  }
+  .blog-content blockquote p {
+    margin: 0;
+  }
 
   .blog-post {
     position: relative;
