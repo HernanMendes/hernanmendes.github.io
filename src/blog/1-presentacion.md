@@ -8,7 +8,7 @@ tags: ["blog"]
 draft: false
 ---
 
-> *"El que quiere exitos mediocres, que no se exponga nunca; y si no quiere cometer ningún error, lo mejor es que nunca haga nada."*
+> *"Si no quiere cometer ningún error, lo mejor es que nunca haga nada."*
 
 
 El **objetivo** de estos blogs no será presentar nada novedoso, nada espectacular, ni nada disruptivo, nada que vaya a salvarle la vida a nadie, ni maximar las ganancias para nadie, ni nada que vaya a cambiar el mundo (como en algún momento [quise](https://www.youtube.com/watch?v=NzYrtzYeAaU&t=230s)). Nada nuevo. <br><br>
