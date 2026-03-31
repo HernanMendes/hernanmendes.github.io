@@ -308,6 +308,10 @@
   .blog-content a {
     color: var(--accent);
   }
+  .blog-content strong {
+    color: var(--text);
+    font-weight: 600;
+  }
 
   .blog-post {
     position: relative;
