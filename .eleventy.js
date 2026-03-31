@@ -30,8 +30,28 @@ module.exports = function (eleventyConfig) {
       .filter((item) => item.data.lang === "en")
       .sort((a, b) => b.date - a.date);
   });
+  const parseLocalDate = (value) => {
+    if (value instanceof Date) {
+      return new Date(
+        value.getUTCFullYear(),
+        value.getUTCMonth(),
+        value.getUTCDate()
+      );
+    }
+    if (typeof value === "string") {
+      const match = value.match(/^(\d{4})-(\d{2})-(\d{2})/);
+      if (match) {
+        const year = Number(match[1]);
+        const month = Number(match[2]) - 1;
+        const day = Number(match[3]);
+        return new Date(year, month, day);
+      }
+    }
+    return new Date(value);
+  };
+
   eleventyConfig.addFilter("dateEs", (value) => {
-    const date = new Date(value);
+    const date = parseLocalDate(value);
     if (Number.isNaN(date.getTime())) return "";
     return new Intl.DateTimeFormat("es-AR", {
       day: "2-digit",
@@ -40,7 +60,7 @@ module.exports = function (eleventyConfig) {
     }).format(date);
   });
   eleventyConfig.addFilter("dateEn", (value) => {
-    const date = new Date(value);
+    const date = parseLocalDate(value);
     if (Number.isNaN(date.getTime())) return "";
     return new Intl.DateTimeFormat("en-US", {
       day: "2-digit",
