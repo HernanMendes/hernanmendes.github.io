@@ -90,7 +90,7 @@
       "description": "Pipeline de datos IoT end-to-end que recolecta temperatura y humedad desde un sensor DHT11, almacena los datos en InfluxDB y los visualiza mediante dashboards en Grafana. Incluye ingesta periódica y servicios con Docker.",
       "tech": ["Python", "InfluxDB", "Grafana", "Raspberry Pi", "Docker"],
       "repo": "https://github.com/HernanMendes/dht11-reader",
-      "live": ""
+      "live": "https://snapshots.raintank.io/dashboard/snapshot/foRyZvpClkdrIxu7EebVGc59XKofahUc"
     }
   ],
   "experience": [
