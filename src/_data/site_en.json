@@ -86,26 +86,10 @@
   "projects": [
     {
       "number": "01",
-      "name": "Multi-source scraping for retail and delivery",
-      "description": "Extraction platform inside a Django stack orchestrating tasks with Celery and Redis. Includes web and mobile scraping, handling dynamic sites, and persistence in PostgreSQL.",
-      "tech": ["Django", "Celery", "Redis", "Selenium", "PostgreSQL"],
-      "repo": "",
-      "live": ""
-    },
-    {
-      "number": "02",
-      "name": "Media content pipeline",
-      "description": "Ingesting data from movie and series sites, enriched with user opinions via Twitter API. Cleaning and preliminary analysis with Pandas and storage in MongoDB for internal use.",
-      "tech": ["Python", "Scrapy", "Twitter API", "Pandas", "MongoDB"],
-      "repo": "",
-      "live": ""
-    },
-    {
-      "number": "03",
-      "name": "Railway interlocking simulator",
-      "description": "Development of a Python GUI to diagram and simulate interlocking systems. Modeling and documentation of digital circuits in VHDL for the EDU-CIAA-FPGA platform.",
-      "tech": ["Python", "GUI", "VHDL", "FPGA"],
-      "repo": "",
+      "name": "IoT Data Pipeline with Raspberry Pi",
+      "description": "End-to-end IoT data pipeline that collects temperature and humidity data from a DHT11 sensor, stores it in InfluxDB, and visualizes it through Grafana dashboards. Includes scheduled data ingestion and Docker-based services.",
+      "tech": ["Python", "InfluxDB", "Grafana", "Raspberry Pi", "Docker"],
+      "repo": "https://github.com/HernanMendes/dht11-reader",
       "live": ""
     }
   ],
