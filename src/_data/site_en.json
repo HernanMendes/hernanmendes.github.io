@@ -98,7 +98,7 @@
       "description": "Argentine open data platform for exploring vehicle thefts and recoveries with clear metrics, official sources, and simple visualizations.",
       "tech": ["Python", "TypeScript", "PostgreSQL", "FastAPI", "Next.js", "Docker", "Railway"],
       "repo": "https://github.com/HernanMendes/choreados.com",
-      "live": "https://www.choreados.com"
+      "live": "https://choreados.com"
     }
   ],
   "experience": [
