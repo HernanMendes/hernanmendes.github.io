@@ -91,6 +91,14 @@
       "tech": ["Python", "InfluxDB", "Grafana", "Raspberry Pi", "Docker"],
       "repo": "https://github.com/HernanMendes/dht11-reader",
       "live": "https://snapshots.raintank.io/dashboard/snapshot/foRyZvpClkdrIxu7EebVGc59XKofahUc"
+    },
+    {
+      "number": "02",
+      "name": "choreados.com",
+      "description": "Plataforma argentina de datos abiertos para explorar robos y recuperos de vehículos con métricas claras, fuentes oficiales y visualizaciones simples.",
+      "tech": ["Python", "TypeScript", "PostgreSQL", "FastAPI", "Next.js", "Docker", "Railway"],
+      "repo": "https://github.com/HernanMendes/choreados.com",
+      "live": "https://www.choreados.com"
     }
   ],
   "experience": [
